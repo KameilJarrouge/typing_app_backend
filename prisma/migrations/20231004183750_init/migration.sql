@@ -14,6 +14,9 @@ CREATE TABLE "Text" (
 -- CreateTable
 CREATE TABLE "TextUser" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "wpm" INTEGER NOT NULL,
+    "percentage" INTEGER NOT NULL,
+    "timestamp" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "userId" INTEGER,
     "textId" INTEGER,
     CONSTRAINT "TextUser_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
